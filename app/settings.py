@@ -138,14 +138,115 @@
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Configure Django App for Heroku 
 # django_heroku.settings(locals())
 
-from pathlib import Path
+# from pathlib import Path
+# import os
+# import dj_database_url
+# import django_heroku
+
+# BASE_DIR = Path(__file__).resolve().parent.parent
+
+# SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure--5n84+xhoige%ya!2f+55!%vpu8z82&p2tg2lw+(9mnp9r8ve&')
+# DEBUG = os.getenv('DEBUG', 'False') == 'True'
+
+# ALLOWED_HOSTS = ['btinews.herokuapp.com', 'localhost', '127.0.0.1']
+
+# INSTALLED_APPS = [
+#     'django.contrib.admin',
+#     'django.contrib.auth',
+#     'django.contrib.contenttypes',
+#     'django.contrib.sessions',
+#     'django.contrib.messages',
+#     'django.contrib.staticfiles',
+#     'rest_framework',
+#     'categories',
+# ]
+
+# # Adicione as configurações do Django REST Framework, se necessário:
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.SessionAuthentication',
+#         'rest_framework.authentication.BasicAuthentication',
+#     ],
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.AllowAny',
+#     ],
+# }
+
+
+# MIDDLEWARE = [
+#     'django.middleware.security.SecurityMiddleware',
+#     'django.contrib.sessions.middleware.SessionMiddleware',
+#     'django.middleware.common.CommonMiddleware',
+#     'django.middleware.csrf.CsrfViewMiddleware',
+#     'django.contrib.auth.middleware.AuthenticationMiddleware',
+#     'django.contrib.messages.middleware.MessageMiddleware',
+#     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+# ]
+
+# # ROOT_URLCONF = 'app.urls'
+# ROOT_URLCONF = 'app.urls'
+
+# TEMPLATES = [
+#     {
+#         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+#         'DIRS': [],
+#         'APP_DIRS': True,
+#         'OPTIONS': {
+#             'context_processors': [
+#                 'django.template.context_processors.debug',
+#                 'django.template.context_processors.request',
+#                 'django.contrib.auth.context_processors.auth',
+#                 'django.contrib.messages.context_processors.messages',
+#             ],
+#         },
+#     },
+# ]
+
+# WSGI_APPLICATION = 'app.wsgi.application'
+
+# DATABASES = {
+#     'default': dj_database_url.config(default='sqlite:///' + str(BASE_DIR / 'db.sqlite3'))
+# }
+
+# AUTH_PASSWORD_VALIDATORS = [
+#     {
+#         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+#     },
+#     {
+#         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+#     },
+#     {
+#         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+#     },
+#     {
+#         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+#     },
+# ]
+
+# LANGUAGE_CODE = 'pt-br'
+# TIME_ZONE = 'America/Sao_Paulo'
+# USE_I18N = True
+# USE_TZ = True
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATIC_URL = '/static/'
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# django_heroku.settings(locals())
+
 import os
+from pathlib import Path
 import dj_database_url
 import django_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure--5n84+xhoige%ya!2f+55!%vpu8z82&p2tg2lw+(9mnp9r8ve&')
+SECRET_KEY = os.getenv('SECRET_KEY', 'sua_chave_secreta')
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['btinews.herokuapp.com', 'localhost', '127.0.0.1']
@@ -161,18 +262,6 @@ INSTALLED_APPS = [
     'categories',
 ]
 
-# Adicione as configurações do Django REST Framework, se necessário:
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
-    ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ],
-}
-
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -183,7 +272,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# ROOT_URLCONF = 'app.urls'
 ROOT_URLCONF = 'app.urls'
 
 TEMPLATES = [
