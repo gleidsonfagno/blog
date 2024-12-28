@@ -172,7 +172,7 @@ MIDDLEWARE = [
 ]
 
 # ROOT_URLCONF = 'app.urls'
-ROOT_URLCONF = 'backend.app.urls'
+ROOT_URLCONF = 'app.urls'
 
 TEMPLATES = [
     {
@@ -190,7 +190,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.app.wsgi.application'
+WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(default='sqlite:///' + str(BASE_DIR / 'db.sqlite3'))
