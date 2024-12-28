@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure--5n84+xhoige%ya!2f+55!%vpu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == True
 
-ALLOWED_HOSTS = ['blog-api.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['btinews.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
