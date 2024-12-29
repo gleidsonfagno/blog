@@ -243,10 +243,13 @@ import os
 from pathlib import Path
 import dj_database_url
 import django_heroku
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY', 'sua_chave_secreta')
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure--5n84+xhoige%ya!2f+55!%vpu8z82&p2tg2lw+(9mnp9r8ve&') 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['btinews.herokuapp.com', 'localhost', '127.0.0.1']
@@ -293,9 +296,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'app.wsgi.application'
 
-DATABASES = {
-    'default': dj_database_url.config(default='sqlite:///' + str(BASE_DIR / 'db.sqlite3'))
-}
+# DATABASES = {
+#     'default': dj_database_url.config(default='sqlite:///' + str(BASE_DIR / 'db.sqlite3'))
+# }
+
+DATABASES = { 'default': dj_database_url.config(default=os.getenv('DATABASE_URL')) }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
